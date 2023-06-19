@@ -8,11 +8,11 @@ Each part has its own README.md file with more detailed information and instruct
 
 ## Frontend
 
-The frontend is a NextJs App using both data-fetching and sessions templates from Vercel, we also added RainbowKit for better and easier connection with the wallet. Wagmi uses an Hardhat provider as default, but it has an Alchemy and a public provider as well to interact with testnets or even main nets.
-It has NextUI and Tailwind preconfigured so you can quickly build pages with the built in components and css.
+The frontend is a ViteJs App using wagmi + vitejs + rainbowkit template. Wagmi uses an  Alchemy provider as default, but also has a public provider as well to interact with testnets or even main nets.
+It has MaterialUI + styled-components preconfigured so you can quickly build pages with the built in components and css.
 You also can quickly deploy this template in Vercel!
 
-> Obs.: Wagmi has a bunch of other preinstalled provider which you can use as well, but they are not previusly configured.
+> Obs.: Wagmi has a bunch of other preinstalled providers/chains which you can use as well, but they are not previusly configured.
 
 ## Backend
 
