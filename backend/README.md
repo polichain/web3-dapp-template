@@ -32,7 +32,7 @@ You need to cover this 3 simple steps:
 
 > Do not close this terminal, it is responsible for hosting your fake network as well as testing wallets, once you close it, the ledger is wiped.
 
-2. You need to build your contracts, for that, open another terminal and run ```npm run build```.
+2. You need to build your contracts, for that, open another terminal and run ```npm run compile```.
 
 3. Last part, you can now deploy your contract, just run ```npm run deploy-local```, and it's done!
 
@@ -49,7 +49,3 @@ Just build your contracts to make sure they are okay with ```npm run build```, a
 The easiest: run ```npm run deploy-mainnet```.
 
 > **ALERT:** This action is payable with **real** ethereum, be aware of that!
-
-### Tests
-
-For running your test scripts uses the command: ```npm run test```
