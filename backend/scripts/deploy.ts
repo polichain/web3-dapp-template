@@ -10,41 +10,38 @@ export async function main() {
 
     console.log("Mock ERC20 Token deployed to:", erc20.address);
 
-    saveFrontendFiles(erc20, "MockERC20");
-
     const vaultFactory = await ethers.getContractFactory("Vault");
 
     const vault = await vaultFactory.deploy(erc20.address);
 
     console.log("Vault deployed to:", vault.address);
 
-    saveFrontendFiles(vault, "Vault");
+    saveFrontendFiles([vault, erc20], ["Vault", "MockERC20"]);
 
     return { erc20, vault }
 }
 
-function saveFrontendFiles(contract: Contract, name: string) {
+function saveFrontendFiles(contracts: Contract[], names: string[]) {
 	const contractsDir = path.join(__dirname, "..", "..", "frontend", "src", "contracts");
   
 	if (!fs.existsSync(contractsDir)) {
-        fs.mkdirSync(contractsDir);
+    fs.mkdirSync(contractsDir);
 	}
-  
-	fs.writeFileSync(
-        path.join(contractsDir, name+"-address.json"),
-        JSON.stringify({ contract: contract.address }, undefined, 2)
-	);
-  
-	const ContractArtifact = artifacts.readArtifactSync(name);
-  
-	fs.writeFileSync(
-        path.join(contractsDir, name+".json"),
-        JSON.stringify(ContractArtifact, null, 2)
-	);
+
+  const result = []
+  for (var i = 0; i < names.length; i++) {
+    const ContractArtifact = artifacts.readArtifactSync(names[i]);
+    result.push({ address: contracts[i].address, abi: ContractArtifact.abi })
   }
+  
+	fs.writeFileSync(
+    path.join(contractsDir, "contract-config.json"),
+    JSON.stringify(result, undefined, 2)
+	);
+}
 
 main().then(() => {
-    console.log('Everything is up and running!')
+  console.log('Everything is up and running!')
 }).catch((error) => {
 	console.error(error);
 	process.exitCode = 1;

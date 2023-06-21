@@ -11,7 +11,7 @@ contract Vault {
 
     uint public totalSupply;
 
-    mapping(address => uint) public balanceOf;
+    mapping(address => uint) public balances;
 
     constructor(address token_) {
         token = IERC20(token_);
@@ -28,7 +28,7 @@ contract Vault {
 
         totalSupply += shares;
 
-        balanceOf[msg.sender] += shares;
+        balances[msg.sender] += shares;
 
         token.safeTransferFrom(msg.sender, address(this), amount_);
     }
@@ -38,8 +38,12 @@ contract Vault {
 
         totalSupply -= shares_;
 
-        balanceOf[msg.sender] -= shares_;
+        balances[msg.sender] -= shares_;
 
         token.safeTransfer(msg.sender, amount);
+    }
+
+    function balanceOf(address account) public view virtual returns (uint){
+        return balances[account];
     }
 }

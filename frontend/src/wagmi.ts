@@ -4,7 +4,7 @@ import { hardhat, sepolia, mainnet } from 'wagmi/chains'
 import { publicProvider } from 'wagmi/providers/public'
 import { alchemyProvider } from 'wagmi/providers/alchemy'
 
-const walletConnectProjectId = '48016c5c4473b7a5f8113dabe916bbb7'
+const walletConnectProjectId = '8357e233f452d783ce19a83b8bef7928'
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
   [hardhat, sepolia, mainnet],
