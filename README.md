@@ -2,7 +2,7 @@
 
 This repo contains a basic template for developing a Web3 Dapp. It's divided in two main parts: frontend and backend.
 
-The instructions for this template will assume that you have basic programs already installed, like Node.js, Git, an IDE, etc.
+The instructions for this template will assume that you have basic programs already installed, like Node.js, Git, an IDE, MetaMask (or any wallet), etc.
 
 Each part has its own README.md file with more detailed information and instructions, but here is a short description:
 
