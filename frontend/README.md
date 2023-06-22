@@ -12,8 +12,9 @@ There is a few things you gotta do to prepare you computer to run this part:
 
 ### env file
 Basically we have 3 main enviroment variables here:
-**ALCHEMY_API_KEY**: Here you can put the Alchemy API Key for using it's provider
-**PROJECT_ID**: This one is needed for wallet connection, you can get one for free and quickly through [walletconnect](cloud.walletconnect.com)
+
+- **ALCHEMY_API_KEY**: Here you can put the Alchemy API Key for using it's provider
+- **PROJECT_ID**: This one is needed for wallet connection, you can get one for free and quickly through [walletconnect](cloud.walletconnect.com)
 
 ### Installing dependencies
 
@@ -33,7 +34,6 @@ Here we have a trick. Wagmi sometimes give an error related to 'globalThis' whil
 
 To build just run ```npm run dev```, and for deploy we highly recommend using Vercel, 'cause it's free and fast, their plataform have a nice wizard for deploying Vite apps.
 
-
 ## What's included?
 
 ### Wagmi + RainbowKit
@@ -45,7 +45,6 @@ This template was made after the Wagmi template, so you can see inside the compo
 ### MaterialUI
 
 Looking for quick and easy development we added MaterialUI so you can focus more on your product and less on small CSS details, you can also check their documentation for all components and it's variations availiable, but also this Dapp it self has a simple interface made with the module that you can use as an example.
-
 
 ## How do I work fullstack locally?
 
